@@ -4,6 +4,29 @@ import { cross } from '../assets'
 
 const Hero = (props) => {
   const enteredLinks = props.inputLinks
+  const [ram, setRam] = useState([]);
+  useEffect(() => {
+    setRam([ ...enteredLinks]);
+  }, [enteredLinks]);
+
+  console.log(ram)
+  // useEffect(() => {
+  //   ram.map((ra) => console.log(ra));
+  // }, [ram]);
+
+  // example
+  // const [a, seta]=useState([1, 2, 3, 4])
+  // const [c, setc] = useState(enteredLinks)
+  // useEffect(()=>{
+  //   c.map(
+  //     b=>console.log(b)
+  //   )
+  // },[c])
+  // useEffect(()=>
+  // enteredLinks.map(
+  //   link=>console.log(link)
+  // ))
+
 
   return (
     <>
@@ -11,7 +34,7 @@ const Hero = (props) => {
         <div className='flex items-center justify-center underline tracking-wide mb-2'>
           <h1 className='font-bold text-xl'>Queue</h1>
         </div>
-        <ol className='list-decimal w-full overflow-ellipsis'>
+        {/* <ol className='list-decimal w-full overflow-ellipsis'>
           {
             enteredLinks.map(
               (link, index) => (
@@ -24,7 +47,7 @@ const Hero = (props) => {
               )
             )
           }
-        </ol>
+        </ol> */}
       </div>
       <Display sourceLinks={enteredLinks} />
     </>

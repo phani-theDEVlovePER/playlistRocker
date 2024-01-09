@@ -10,8 +10,9 @@ const InputData = () => {
         e.preventDefault()
         if (link) {
             setInputLinks(prev => [...prev, link])
-            setLink('')
+            // setLink('')
         }
+        setLink('')
     }
     return (
         <div className='min-w-full min-h-full'>
